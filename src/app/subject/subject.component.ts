@@ -12,8 +12,9 @@ export class SubjectComponent implements OnInit {
   @Input() title: string;
   @Input() room: string;
   @Input() color: string;
+  @Input() time: number;
   @Input() repeats: boolean;
-  @Output() repeat = new EventEmitter<boolean>();
+  @Output() repeat = new EventEmitter<number>();
 
   constructor() {
 
@@ -21,8 +22,7 @@ export class SubjectComponent implements OnInit {
 
   onClick() {
     this.repeats = !this.repeats;
-    this.repeat.emit(this.repeats);
-    console.log(this.repeats);
+    this.repeats ? this.repeat.emit(this.time) : this.repeat.emit();
   }
 
   ngOnInit() {

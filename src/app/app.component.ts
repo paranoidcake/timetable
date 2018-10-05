@@ -40,50 +40,7 @@ export class AppComponent {
       }
     }
 
-    onRepeat (repeat: boolean) {
-      repeat ? console.log("yes") : console.log("no");
+    onRepeat (repeat: number) {
+      repeat ? console.log(repeat) : console.log("no");
     }
-
-    // Dead system (subjects: Subjects[])
-    
-  /*onCreateSubject (subject: string, room: string) {
-    this.createSubject(subject.trim(), room.trim(), this.color);
-    console.log("onCreateSubject: " + subject + " " + room);
-  }
-
-  createSubject (subject: string, room: string, color: string) {
-    if(subject && room && color){
-      this.subjects.push(new Subject(subject, room, color));
-    }
-    console.log(this.subjects);
-  }
-
-  colors = ["blue", "orange", "green", "purple", "violet", "pink", "lilac", "grey"];
-  onChange (value){
-    this.color = value;
-    console.log(this.color);
-  }
-
-  saveAs64 () {
-    this.out = ""
-    this.subjects.forEach(element => {
-      this.out += element.title + "." + element.room + "." + element.color + ".";
-    });
-    this.out = btoa(this.out);
-  }
-
-  loadFrom64 (input) {
-    if(this.subjects.length == 0){
-      var ayy = atob(input).split(".")
-      for (let i = 0; i < ayy.length; i += 3) {
-        this.subjects.push(new Subject(ayy[i], ayy[i+1], ayy[i+2]))
-      }
-    }
-    console.log(this.subjects)
-  }
-
-  clear() {
-    this.subjects = []
-    this.out = ""
-  }*/
 }

@@ -15,7 +15,7 @@
         </span>
       </span>
       <ng-container *ngFor="let subject of subjects">
-        <app-subject *ngIf="time == subject.time" title="{{subject.title}}" room="{{subject.room}}" color="{{subject.color}}" fxFlex=20 (repeat)="onRepeat($event)"></app-subject>
+        <app-subject *ngIf="time == subject.time" title="{{subject.title}}" room="{{subject.room}}" color="{{subject.color}}" time="{{subject.time}}" fxFlex=20 (repeat)="onRepeat($event)"></app-subject>
       </ng-container>
     </section>
   </section>
