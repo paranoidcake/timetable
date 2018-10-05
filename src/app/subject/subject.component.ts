@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Input } from '@angular/core'
-import { Subject } from '../subject';
 
 @Component({
   selector: 'app-subject',
@@ -12,9 +11,10 @@ export class SubjectComponent implements OnInit {
   @Input() title: string;
   @Input() room: string;
   @Input() color: string;
-  @Input() time: number;
+  @Input() time: string;
+  @Input() day: string;
   @Input() repeats: boolean;
-  @Output() repeat = new EventEmitter<number>();
+  @Output() repeat = new EventEmitter<string>();
 
   constructor() {
 
@@ -22,7 +22,7 @@ export class SubjectComponent implements OnInit {
 
   onClick() {
     this.repeats = !this.repeats;
-    this.repeats ? this.repeat.emit(this.time) : this.repeat.emit();
+    this.repeats ? this.repeat.emit(this.time + "~" + this.day) : this.repeat.emit();
   }
 
   ngOnInit() {

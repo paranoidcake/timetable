@@ -35,12 +35,20 @@ export class AppComponent {
     constructor () {
       for (let i = 0; i < 11; i++) {
         for(let j=0; j<5; j++){
-          this.subjects.push(new Subject("Subject / Time"+i, "Room", "blue", this.times[i]));
+          this.subjects.push(new Subject("" + i, "" + j, "blue", this.times[i], this.days[j]));
         }
       }
     }
 
-    onRepeat (repeat: number) {
-      repeat ? console.log(repeat) : console.log("no");
+    onRepeat (repeat: string) {
+      if(repeat){
+        // Enable repeat
+        var pos = repeat.split("~");
+        console.log(this.times.indexOf(pos[0]));
+        console.log(this.days.indexOf(pos[1]));
+      } else {
+        // Disable repeat
+        console.log("disable");
+      }
     }
 }
