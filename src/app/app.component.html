@@ -1,0 +1,22 @@
+<section fxFlex=100 class=wrapper>
+  <section fxLayout="column" fxFlex=100>
+    <section fxLayout="row" fxFlex=100>
+      <span fxFlex=10></span>
+      <span fxLayout=row fxFlex=20 class="day" *ngFor="let day of days">
+        <span fxFlex=100>
+          {{day}}
+        </span>
+      </span>
+    </section>
+    <section fxLayout="row" fxFlex=100 *ngFor="let time of times">
+      <span fxLayout="row" fxFlex=10 class=time>
+        <span fxFlex=100>
+          {{time}}
+        </span>
+      </span>
+      <ng-container *ngFor="let subject of subjects">
+        <app-subject *ngIf="time == subject.time" title="{{subject.title}}" room="{{subject.room}}" color="{{subject.color}}" fxFlex=20 (repeat)="onRepeat($event)"></app-subject>
+      </ng-container>
+    </section>
+  </section>
+</section>

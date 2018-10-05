@@ -1,0 +1,40 @@
+.subject{
+    color: white;
+    border: 0.1rem solid rgba(0,0,0,0.13);
+
+    height: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+.blue {
+    background: rgb(60, 134, 230);
+}
+  
+.orange {
+    background: rgb(252, 130, 81);
+}
+
+.green {
+    background: rgb(38, 180, 81);
+}
+
+.purple {
+    background: rgb(200, 64, 218);
+}
+
+.violet {
+    background: rgb(118, 64, 218);
+}
+
+.pink {
+    background: rgb(218, 64, 97);
+}
+
+.lilac {
+    background: rgb(201, 6, 120);
+}
+
+.grey {
+    background: rgb(156, 156, 156);
+}
