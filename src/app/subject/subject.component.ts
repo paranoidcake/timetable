@@ -22,7 +22,7 @@ export class SubjectComponent implements OnInit {
 
   onClick() {
     this.repeats = !this.repeats;
-    this.repeats ? this.repeat.emit(this.time + "~" + this.day) : this.repeat.emit();
+    this.repeats ? this.repeat.emit("t~" + this.time + "~" + this.day) : this.repeat.emit("f~" + this.time + "~" + this.day);
   }
 
   ngOnInit() {

@@ -41,14 +41,18 @@ export class AppComponent {
     }
 
     onRepeat (repeat: string) {
-      if(repeat){
+      let pos = repeat.split("~");
+      let time = this.times.indexOf(pos[1]);
+      let day = this.days.indexOf(pos[2]);
+      if(pos[0]=="t" && time != 0){
         // Enable repeat
-        var pos = repeat.split("~");
-        console.log(this.times.indexOf(pos[0]));
-        console.log(this.days.indexOf(pos[1]));
-      } else {
+        
+        this.subjects[5 * time-3 + day-2].color = "green";
+        this.subjects[5 * time + day].color = "green";
+      } else if (time != 0) {
         // Disable repeat
-        console.log("disable");
+        this.subjects[5 * time-3 + day-2].color = "grey";
+        this.subjects[5 * time + day].color = "grey";
       }
     }
 }
