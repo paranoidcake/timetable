@@ -7,10 +7,17 @@
     align-items: center;
 }
 
+.false{
+  background: rgb(252, 130, 81);
+}
+.true {
+  background: rgb(118, 64, 218);
+}
+
 .blue {
     background: rgb(60, 134, 230);
 }
-  
+
 .orange {
     background: rgb(252, 130, 81);
 }

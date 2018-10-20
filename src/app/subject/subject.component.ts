@@ -13,7 +13,7 @@ export class SubjectComponent implements OnInit {
   @Input() color: string;
   @Input() time: string;
   @Input() day: string;
-  @Input() repeats: boolean;
+  @Input() repeats: string;
   @Output() repeat = new EventEmitter<string>();
 
   constructor() {
@@ -21,8 +21,13 @@ export class SubjectComponent implements OnInit {
   }
 
   onClick() {
-    this.repeats = !this.repeats;
-    this.repeats ? this.repeat.emit("t~" + this.time + "~" + this.day) : this.repeat.emit("f~" + this.time + "~" + this.day);
+    if(this.repeats == "true"){
+      this.repeats = "false";
+      this.repeat.emit("f~" + this.time + "~" + this.day);
+    } else {
+      this.repeats = "true";
+      this.repeat.emit("t~" + this.time + "~" + this.day);
+    }
   }
 
   ngOnInit() {

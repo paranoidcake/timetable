@@ -19,23 +19,23 @@ export class AppComponent {
     new Time('14:00 - 14:40', []),
     new Time('14:40 - 15:20', []),
     new Time('15:20 - 16:00', [])];*/
-    times = ['9:00 - 9:40', 
-            '9:40 - 10:20', 
-            '10:20 - 11:00', 
-            '11:00 - 11:40', 
-            '11:40 - 11:55', 
-            '11:55 - 12:35', 
-            '12:35 - 13:15', 
-            '13:15 - 14:00', 
-            '14:00 - 14:40', 
-            '14:40 - 15:20', 
+    times = ['9:00 - 9:40',
+            '9:40 - 10:20',
+            '10:20 - 11:00',
+            '11:00 - 11:40',
+            '11:40 - 11:55',
+            '11:55 - 12:35',
+            '12:35 - 13:15',
+            '13:15 - 14:00',
+            '14:00 - 14:40',
+            '14:40 - 15:20',
             '15:20 - 16:00'];
     subjects = [];
 
     constructor () {
       for (let i = 0; i < 11; i++) {
         for(let j=0; j<5; j++){
-          this.subjects.push(new Subject("" + i, "" + j, "blue", this.times[i], this.days[j]));
+          this.subjects.push(new Subject("" + i, "" + j, "blue", this.times[i], this.days[j], "false"));
         }
       }
     }
@@ -46,13 +46,13 @@ export class AppComponent {
       let day = this.days.indexOf(pos[2]);
       if(pos[0]=="t" && time != 0){
         // Enable repeat
-        
-        this.subjects[5 * time-3 + day-2].color = "green";
-        this.subjects[5 * time + day].color = "green";
+
+        this.subjects[5 * time-3 + day-2].repeat = "true";
+        this.subjects[5 * time + day].repeat = "true";
       } else if (time != 0) {
         // Disable repeat
-        this.subjects[5 * time-3 + day-2].color = "grey";
-        this.subjects[5 * time + day].color = "grey";
+        this.subjects[5 * time-3 + day-2].repeat = "false";
+        this.subjects[5 * time + day].repeat = "false";
       }
     }
 }
