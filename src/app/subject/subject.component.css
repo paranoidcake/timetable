@@ -7,11 +7,14 @@
     align-items: center;
 }
 
-.false{
-  background: rgb(252, 130, 81);
+.hasrepeat{
+  border-top: none;
 }
-.true {
-  background: rgb(118, 64, 218);
+.repeat {
+  border-bottom: none;
+}
+.hasrepeat span{
+  display: none;
 }
 
 .blue {

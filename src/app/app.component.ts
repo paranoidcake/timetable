@@ -1,3 +1,4 @@
+import { State } from './state';
 import { Component } from '@angular/core';
 import { Subject } from './subject';
 
@@ -35,24 +36,19 @@ export class AppComponent {
     constructor () {
       for (let i = 0; i < 11; i++) {
         for(let j=0; j<5; j++){
-          this.subjects.push(new Subject("" + i, "" + j, "blue", this.times[i], this.days[j], "false"));
+          this.subjects.push(new Subject("" + i, "" + j, "blue", i, j, "false"));
         }
       }
     }
 
-    onRepeat (repeat: string) {
-      let pos = repeat.split("~");
-      let time = this.times.indexOf(pos[1]);
-      let day = this.days.indexOf(pos[2]);
-      if(pos[0]=="t" && time != 0){
-        // Enable repeat
-
-        this.subjects[5 * time-3 + day-2].repeat = "true";
-        this.subjects[5 * time + day].repeat = "true";
-      } else if (time != 0) {
-        // Disable repeat
-        this.subjects[5 * time-3 + day-2].repeat = "false";
-        this.subjects[5 * time + day].repeat = "false";
+    onRepeat (state: State) {
+      var pos = 5*state.time+state.day;
+      if(state.state == true) { // Enable repeat
+        this.subjects[pos].repeat = "repeat";
+        this.subjects[pos+5].repeat = "hasrepeat";
+      } else {                  // Disable repeat
+        this.subjects[pos].repeat = "";
+        this.subjects[pos+5].repeat = "";
       }
     }
 }

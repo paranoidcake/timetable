@@ -15,14 +15,14 @@
         </span>
       </span>
       <ng-container *ngFor="let subject of subjects">
-        <app-subject *ngIf="time == subject.time"
+        <app-subject *ngIf="times.indexOf(time) == subject.time" fxFlex=20
         title="{{subject.title}}"
         room="{{subject.room}}"
         color="{{subject.color}}"
-        time="{{subject.time}}"
-        day="{{subject.day}}"
-        repeats="{{subject.repeat}}"
-        fxFlex=20 (repeat)="onRepeat($event)"></app-subject>
+        time={{subject.time}}
+        day={{subject.day}}
+        repeat="{{subject.repeat}}"
+        (changeState)="onRepeat($event)"></app-subject>
       </ng-container>
     </section>
   </section>

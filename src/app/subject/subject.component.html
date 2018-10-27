@@ -1,4 +1,4 @@
-<section fxLayout="row wrap" class="subject {{color}} {{repeats}}" (click)="onClick()">
+<section fxLayout="row wrap" class="subject {{repeat}} {{color}}" (click)="onClick()">
   <span fxFlex=100>{{title}}</span>
-  <span fxFlex=100>{{room}}</span>
+  <span fxFlex=100 class="{{repeat}}">{{room}}</span>
 </section>

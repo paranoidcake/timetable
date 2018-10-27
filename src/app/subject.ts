@@ -3,8 +3,8 @@ export class Subject {
         public title: string,
         public room: string,
         public color: string,
-        public time: string,
-        public day: string,
+        public time: number,
+        public day: number,
         public repeat: string
     ) { }
 }
