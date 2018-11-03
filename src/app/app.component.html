@@ -15,7 +15,7 @@
         </span>
       </span>
       <ng-container *ngFor="let subject of subjects">
-        <app-subject *ngIf="times.indexOf(time) == subject.time" fxFlex=20
+        <app-subject *ngIf="time == subject.timeS" fxFlex=20
         title="{{subject.title}}"
         room="{{subject.room}}"
         color="{{subject.color}}"

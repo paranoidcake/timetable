@@ -1,4 +1,9 @@
-<section fxLayout="row wrap" class="subject {{repeat}} {{color}}" (click)="onClick()">
+<section *ngIf="show"
+  fxLayout="row wrap" class="subject {{repeat}} {{color}}" (click)="onClick()">
   <span fxFlex=100>{{title}}</span>
   <span fxFlex=100 class="{{repeat}}">{{room}}</span>
+</section>
+<section *ngIf="show==false"
+  fxLayout="row wrap" class="subject {{color}}">
+  <span fxFlex=100>🦀🦀🦀🦀🦀</span>
 </section>

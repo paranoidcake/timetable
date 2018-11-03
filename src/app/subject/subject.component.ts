@@ -16,6 +16,7 @@ export class SubjectComponent implements OnInit {
   @Input() day: number;
   @Input() repeat: string; // Value for CSS
 
+  show: boolean = false;
   state: boolean = true; // Repeat switch
 
   @Output() changeState = new EventEmitter<State>(); //Value for JS

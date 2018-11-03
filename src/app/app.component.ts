@@ -36,7 +36,7 @@ export class AppComponent {
     constructor () {
       for (let i = 0; i < 11; i++) {
         for(let j=0; j<5; j++){
-          this.subjects.push(new Subject("" + i, "" + j, "blue", i, j, "false"));
+          this.subjects.push(new Subject("" + i, "" + j, "blue", i, this.times[i], j, "false"));
         }
       }
     }
