@@ -37,3 +37,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+#Api-key
+/src/assets/timetable-80966-firebase-adminsdk-6hms6-116cc30ce0.json

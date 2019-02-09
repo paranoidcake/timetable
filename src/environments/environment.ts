@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyDOUTekrbhi0Z487W0QVRyCy__zOGhXJ90',
+    authDomain: 'timetable-80966.firebaseapp.com',
+    databaseURL: 'https://timetable-80966.firebaseio.com',
+    projectId: 'timetable-80966',
+    storageBucket: 'timetable-80966.appspot.com',
+  }
 };
 
 /*
